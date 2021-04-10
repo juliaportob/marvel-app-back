@@ -17,4 +17,5 @@ FavoriteRouter.post('/', FavoriteValidation, async (req, res) => {
   return res.status(200).json(newFavorite);
 });
 
+
 module.exports = FavoriteRouter;
