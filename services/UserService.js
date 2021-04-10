@@ -9,7 +9,13 @@ const addUserService = async (user) => {
 
 const getUserByIdService = async (id) => getUserById(id);
 
+const getUserByEmailService = async (emailLogin) => {
+  const resultService = await getUserByEmail(emailLogin);
+  return resultService;
+}
+
 module.exports = {
   addUserService,
   getUserByIdService,
+  getUserByEmailService,
 };

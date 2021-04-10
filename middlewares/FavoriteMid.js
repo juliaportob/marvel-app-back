@@ -1,8 +1,6 @@
 const { getByUserId } = require('../models/FavoriteModel');
 const UNAUTHORIZED = 401;
 
-const errorMsg = (status, mess) => ({ statusCode: status, message: { message: mess } });
-
 const FavoriteValidation = async (req, res, next) => {
   const { id_favorite: favorite, user_id } = req.body;
 
