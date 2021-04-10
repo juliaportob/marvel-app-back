@@ -1,14 +1,15 @@
 const { Router } = require('express');
-const { addUserService, getUserByIdService, getUserByEmailService } = require('../services/UserService');
+const { addUserService, getUserByIdService, getUserByEmailService, updateUserService } = require('../services/UserService');
 const { secret, jwtConfig, createJWTPayload, jwtSign } = require('../auth/CreateToken');
 const { validateLogin, validateRegister } = require('../middlewares/LoginMid');
+const TokenValidator = require('../middlewares/TokenValidator');
 const UserRouter = new Router();
 
 UserRouter.post('/register', validateRegister, async (req, res) => {
   const { name, email, password } = req.body;
   const user = { name, email, password };
   const newUser = await addUserService(user);
-  return res.status(200).json(newUser);
+  return res.status(201).json(newUser);
 });
 
 UserRouter.get('/:id', async (req, res) => {
@@ -34,6 +35,12 @@ UserRouter.post('/login', validateLogin, async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+UserRouter.put('/update', TokenValidator, async (req, res) => {
+  const { name: newUserName, email: newEmail, password: newPassord, id: userId } = req.body;
+  await updateUserService(newUserName, newEmail,newPassord, userId);
+  res.status(200).send({ message: 'User updated sucessfully' });
 });
 
 module.exports = UserRouter;

@@ -1,4 +1,4 @@
-const { addUser, getUserById, getUserByEmail } = require('../models/UserModel');
+const { addUser, getUserById, getUserByEmail, updateUser } = require('../models/UserModel');
 
 const addUserService = async (user) => {
   const verifyEmail = await getUserByEmail(user.email);
@@ -14,8 +14,14 @@ const getUserByEmailService = async (emailLogin) => {
   return resultService;
 }
 
+const updateUserService = async (newName, newEmail, newPassword, userId) => {
+  const updatedUser = await updateUser(newName, newEmail, newPassword, userId);
+  return updatedUser;
+};
+
 module.exports = {
   addUserService,
   getUserByIdService,
   getUserByEmailService,
+  updateUserService
 };

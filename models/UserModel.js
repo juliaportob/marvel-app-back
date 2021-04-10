@@ -16,4 +16,10 @@ const getUserByEmail = async (emailLogin) => {
   return result;
 };
 
-module.exports = { addUser, getUserById, getUserByEmail };
+const updateUser = async (newName, newEmail, newPassword, userId) => {
+  await connection
+    .execute('UPDATE users SET name=?, email=?, password=? WHERE id=?', [newName, newEmail, newPassword, userId]);
+  return null;
+};
+
+module.exports = { addUser, getUserById, getUserByEmail, updateUser };
