@@ -10,8 +10,8 @@ FavoriteRouter.get('/:id', async (req, res) => {
 });
 
 FavoriteRouter.post('/', FavoriteValidation, async (req, res) => {
-  const { id_favorite, name, url_image, user_id } = req.body;
-  const fav = { id_favorite, name, url_image, user_id };
+  const { id_favorite, name, url_image, related, user_id } = req.body;
+  const fav = { id_favorite, name, url_image, related, user_id };
   const newFavorite = await addFavoriteService(fav);
   return res.status(200).json(newFavorite);
 });
