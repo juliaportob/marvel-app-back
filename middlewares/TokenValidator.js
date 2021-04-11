@@ -8,6 +8,7 @@ module.exports = async (req, res, next) => {
     if (!token) return res.status(401).json({ message: 'Please Log in' });
   
     const { userData } = jwt.verify(token, secret);
+    console.log(userData, 'token validator userdata')
     const tokenUserEmail = userData[0].email;
     const user = await getUserByEmail(tokenUserEmail);
 

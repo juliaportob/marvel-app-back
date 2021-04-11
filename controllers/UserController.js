@@ -20,7 +20,6 @@ UserRouter.get('/:id', async (req, res) => {
 
 UserRouter.post('/login', validateLogin, async (req, res, next) => {
   const user = await getUserByEmailService(req.body.email);
-
   try {
     if (!user.length) return res.status(404).json({ message: 'Email not found' });
     const payload = createJWTPayload(user);
@@ -31,6 +30,7 @@ UserRouter.post('/login', validateLogin, async (req, res, next) => {
         name: user[0].name,
         email: user[0].email,
         id: user[0].id,
+        password: user[0].password,
       });
   } catch (error) {
     next(error);
@@ -39,7 +39,8 @@ UserRouter.post('/login', validateLogin, async (req, res, next) => {
 
 UserRouter.put('/update', TokenValidator, async (req, res) => {
   const { name: newUserName, email: newEmail, password: newPassord, id: userId } = req.body;
-  await updateUserService(newUserName, newEmail,newPassord, userId);
+  console.log(req.body, 'req.body backend');
+  await updateUserService(newUserName, newEmail, newPassord, userId);
   res.status(200).send({ message: 'User updated sucessfully' });
 });
 
