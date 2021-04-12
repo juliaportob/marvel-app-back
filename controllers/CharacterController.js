@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { characterDataByName, characterDataById } = require('../services/MarvelService');
+const { characterDataByName, characterDataById, getAllCharactersData } = require('../services/MarvelService');
 const CharacterRouter = new Router();
 
 CharacterRouter.get('/name/:name', async (req, res) => {

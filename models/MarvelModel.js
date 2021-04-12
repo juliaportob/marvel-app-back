@@ -63,6 +63,5 @@ const getCharacterById = async (id) => {
   .then((response)=>response.json())
   .then(({data})=> data.results[0]);
 }
-  
 
 module.exports = { getCharacterByName, getComicByTitle, getComicById, getCharacterById };
