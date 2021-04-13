@@ -64,4 +64,18 @@ const getCharacterById = async (id) => {
   .then(({data})=> data.results[0]);
 }
 
-module.exports = { getCharacterByName, getComicByTitle, getComicById, getCharacterById };
+const getCharacters = async (offset) => {
+  return fetch(
+    `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}&limit=10&offset=${offset}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+    }
+  )
+  .then((response)=>response.json())
+  .then(({data})=> data.results[0]);
+}
+
+module.exports = { getCharacterByName, getComicByTitle, getComicById, getCharacterById, getCharacters };
