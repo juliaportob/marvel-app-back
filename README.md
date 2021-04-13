@@ -1,8 +1,10 @@
 # Marvel App Back-End!
 
 Este projeto é uma aplicação que permite consultar personagens e HQs da Marvel, além de possuir também a funcionalidade de favoritá-los e desfavoritá-los. 🚀
+
 Link API da Marvel: https://developer.marvel.com/
-Link Aplicação: 
+Link Front-end: https://marvel-front-jp.herokuapp.com/
+Link Aplicação: https://marvel-back-jp.herokuapp.com/
 
 ---
 
