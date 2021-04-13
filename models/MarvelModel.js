@@ -75,7 +75,7 @@ const getCharacters = async (offset) => {
     }
   )
   .then((response)=>response.json())
-  .then(({data})=> data.results[0]);
+  .then(({data})=> data.results);
 }
 
 module.exports = { getCharacterByName, getComicByTitle, getComicById, getCharacterById, getCharacters };
