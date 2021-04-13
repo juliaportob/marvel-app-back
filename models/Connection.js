@@ -1,11 +1,13 @@
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
+console.log(process.env.HOSTNAME, 'host')
+
 const config = {
-  host: process.env.HOSTNAME,
-  user: process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: 'MarvelApp',
+  host: 'us-cdbr-east-03.cleardb.com',
+  user: 'bd4924fa610466',
+  password: 'edf0e894',
+  database: 'heroku_d5a595fd89af',
 };
 
 const connection = mysql.createPool(config);
