@@ -30,19 +30,19 @@ A aplicação conta com quatro rotas para manipulação de dados referentes aos 
 
 ## LISTA DE ENDPOINTS
 
-~ /user/register ~ rota para cadastro de um novo usuário
-~ /user/login ~ rota para um usuário logar na aplicação
-~ /user/update ~ rota para atualização de dados cadastrais de um usuário
-~ /user/:id ~ rota para buscar os dados de um usuário através de seu id
+- /user/register ~ rota para cadastro de um novo usuário
+- /user/login ~ rota para um usuário logar na aplicação
+- /user/update ~ rota para atualização de dados cadastrais de um usuário
+- /user/:id ~ rota para buscar os dados de um usuário através de seu id
 
-~ /character/name/:name ~ rota para realizar consulta dos dados de um personagem na API da Marvel através de seu nome
-~ /character/:id ~ rota para realizar consulta dos dados de um personagem na API da Marvel através de seu id
+- /character/name/:name ~ rota para realizar consulta dos dados de um personagem na API da Marvel através de seu nome
+- /character/:id ~ rota para realizar consulta dos dados de um personagem na API da Marvel através de seu id
 
-~ /comic/title/:title ~ rota para realizar consulta dos dados de uma HQ na API da Marvel através de seu título
-~ /comic/:id ~ rota para realizar consulta dos dados de uma HQ na API da Marvel através de seu id
+- /comic/title/:title ~ rota para realizar consulta dos dados de uma HQ na API da Marvel através de seu título
+- /comic/:id ~ rota para realizar consulta dos dados de uma HQ na API da Marvel através de seu id
 
-~ /favorite ~ rota para cadastrar uma HQ ou um personagem na lista de favoritos do usuário
-~ /favorite/:id ~ rota para buscar a listagem de favoritos de um usuário com base em seu user_id
-~ /favorite/delete ~ rota para deletar um favorito da listagem
+- /favorite ~ rota para cadastrar uma HQ ou um personagem na lista de favoritos do usuário
+- /favorite/:id ~ rota para buscar a listagem de favoritos de um usuário com base em seu user_id
+- /favorite/delete ~ rota para deletar um favorito da listagem
 
 ---
